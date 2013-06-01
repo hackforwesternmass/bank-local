@@ -62,7 +62,7 @@ class CPT_Sections {
 	 */
 	public function admin_enqueue_scripts() {
 		$screen = get_current_screen();
-		if ( 'post' !== $screen->base && $this->post_type !== $screen->post_type )
+		if ( 'post' !== $screen->base || $this->post_type !== $screen->post_type )
 			return;
 
 		wp_enqueue_script( 'bl-admin', get_template_directory_uri().'/assets/js/admin.js', array( 'jquery', 'jquery-ui-sortable' ) );
@@ -214,7 +214,7 @@ class CPT_Sections {
 	</thead>
 	<tfoot>
 		<tr>
-			<th colspan="7">
+			<th colspan="3">
 				<a class="button add-row" href="#" <?php if ( count( $rows ) >= 3 ) echo 'disabled="disabled"'; ?>>+ Add row</a>
 			</th>
 		</tr>
@@ -233,7 +233,7 @@ class CPT_Sections {
 </table>
 
 <script type="text/template" id="tmpl-new-row">
-	<?php $this->item_row_html( '<%=i%>', array( 'title' => '<%=title%>', 'text' => '<%=text%>' ) ); ?>
+	<?php $this->item_row_html( '<%=i%>', array() ); ?>
 </script>
 
 <h3>Citations</h3>
