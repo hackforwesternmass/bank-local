@@ -1,0 +1,13 @@
+#post-body-content h3 {
+	margin: 20px 0 10px;
+}
+#post-body-content .pull-up {
+	margin-top: -20px;
+}
+#post-body-content textarea {
+	height: 5em;
+	resize: vertical;
+}
+#post-body-content .sortable input {
+	margin-bottom: 5px;
+}
