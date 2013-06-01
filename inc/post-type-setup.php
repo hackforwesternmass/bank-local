@@ -134,18 +134,7 @@ class CPT_Sections {
 
 		return $messages;
 	}
-	
-	/**
-	 * Save the history field
-	 * @param  int    $post_id Current post ID
-	 * @param  object $post    Current post object
-	 * @return void
-	 */
-	public function save_points( $post_id, $post ) {
 
-		
-	}
-	
 	/**
 	 * Relabel the title input placeholder
 	 * @param  string $placeholder Placeholder text
@@ -157,6 +146,51 @@ class CPT_Sections {
 			$placeholder = 'Section title (internal only?)';
 
 		return $placeholder;
+	}
+	
+	/**
+	 * Save the history field
+	 * @param  int    $post_id Current post ID
+	 * @param  object $post    Current post object
+	 * @return void
+	 */
+	public function save_points( $post_id, $post ) {
+		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )
+			return;
+
+		if ( ! current_user_can( 'edit_post', $post_id ) )
+			return;
+
+		if ( ! isset( $_POST['_points_nonce'] ) || ! wp_verify_nonce( $_POST['_points_nonce'], 'bl-section-points-save' ) )
+			return;
+
+		if ( empty( $_POST['points'] ) )
+			return;
+		
+		// Update post meta for details
+		$new = array();
+
+		$points = $_POST['points'];
+
+		foreach ( $points as $point ) {
+			$data = array();
+
+			foreach ( array( 'title','text' ) as $key ) {
+				if ( ! empty( $point[$key] ) )
+					if ( 'text' == $key )
+						$data[$key] = wp_kses( $point[$key] );
+					else
+						$data[$key] = sanitize_text_field( $point[$key] );
+			}
+
+			if ( ! empty( $data) )
+				$new[] = $data;
+		}
+
+		if ( ! empty ( $new ) )
+			update_post_meta( $post_id, 'section_points', $new );
+		else
+			delete_post_meta( $post_id, 'section_points' );
 	}
 
 	
@@ -224,13 +258,13 @@ class CPT_Sections {
 			<?php
 			$text = '';
 			if ( isset( $values['title'] ) )
-				$text = ( is_numeric( $id ) )? esc_attr( $values['title'] ): $values['title'];
+				$title = ( is_numeric( $id ) )? esc_attr( $values['title'] ): $values['title'];
 			if ( isset( $values['text'] ) )
 				$text = ( is_numeric( $id ) )? esc_attr( $values['text'] ): $values['text'];
 			?>
 			<td>
-				<input type="text" placeholder="Title" name="rounds[<?php echo $id; ?>][text]" class="widefat" value="<?php echo $text; ?>" />
-				<textarea placeholder="2-4 sentences making this point." name="rounds[<?php echo $id; ?>][text]" class="widefat"><?php echo $text; ?></textarea>
+				<input type="text" placeholder="Title" name="points[<?php echo $id; ?>][title]" class="widefat" value="<?php echo $title; ?>" />
+				<textarea placeholder="2-4 sentences making this point." name="points[<?php echo $id; ?>][text]" class="widefat"><?php echo $text; ?></textarea>
 			</td>
 			<td>
 				<p>

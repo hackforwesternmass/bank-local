@@ -2,7 +2,7 @@
 	margin: 20px 0 10px;
 }
 #post-body-content .pull-up {
-	margin-top: -20px;
+	margin-top: -1px;
 }
 #post-body-content textarea {
 	height: 5em;
@@ -10,4 +10,8 @@
 }
 #post-body-content .sortable input {
 	margin-bottom: 5px;
+}
+
+#titlediv .inside {
+	display: none;
 }
