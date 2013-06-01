@@ -65,7 +65,6 @@ class CPT_Sections {
 		if ( 'post' !== $screen->base && $this->post_type !== $screen->post_type )
 			return;
 
-		wp_enqueue_script( 'jquery-ui-sortable' );
 		wp_enqueue_script( 'bl-admin', get_template_directory_uri().'/assets/js/admin.js', array( 'jquery', 'jquery-ui-sortable' ) );
 		wp_enqueue_style( 'bl-admin', get_template_directory_uri().'/assets/admin.css' );
 	}
@@ -203,6 +202,8 @@ class CPT_Sections {
 			wp_nonce_field( 'bl-section-points-save', '_points_nonce' ); ?>
 
 <h3 class="pull-up">Points</h3>
+<p class="description">Enter up to 3 points to make in this section</p>
+<?php $rows = get_post_meta( get_the_ID(), 'section_points', true ); ?>
 <table class="widefat">
 	<thead>
 		<tr>
@@ -214,14 +215,12 @@ class CPT_Sections {
 	<tfoot>
 		<tr>
 			<th colspan="7">
-				<a class="button add-row" href="#">+ Add row</a>
+				<a class="button add-row" href="#" <?php if ( count( $rows ) >= 3 ) echo 'disabled="disabled"'; ?>>+ Add row</a>
 			</th>
 		</tr>
 	</tfoot>
 	<tbody class="sortable">
 		<?php
-			$rows = get_post_meta( get_the_ID(), 'section_points', true );
-
 			if ( ! empty( $rows ) ) {
 				foreach( $rows as $id => $item ) {
 					$this->item_row_html( $id, $item );
@@ -256,6 +255,7 @@ class CPT_Sections {
 				<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/drag-handle.png" alt="Drag to move" title="Drag to move" />
 			</td>
 			<?php
+			$title = '';
 			$text = '';
 			if ( isset( $values['title'] ) )
 				$title = ( is_numeric( $id ) )? esc_attr( $values['title'] ): $values['title'];
