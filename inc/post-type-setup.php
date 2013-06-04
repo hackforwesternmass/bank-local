@@ -49,6 +49,7 @@ class CPT_Sections {
 		add_action( 'admin_menu', array( $this, 'remove_menus' ) );
 
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
+		add_action( 'admin_head', array( $this, 'cpt_icon' ) );
 
 		add_filter( 'post_updated_messages', array( $this, 'post_updated_messages' ) );
 		add_filter( 'enter_title_here', array( $this, 'enter_title_here' ), 10, 2 );
@@ -67,6 +68,23 @@ class CPT_Sections {
 
 		wp_enqueue_script( 'bl-admin', get_template_directory_uri().'/assets/js/admin.js', array( 'jquery', 'jquery-ui-sortable' ) );
 		wp_enqueue_style( 'bl-admin', get_template_directory_uri().'/assets/admin.css' );
+	}
+	
+	/**
+	 * Custom icon
+	 */
+	function cpt_icon() {
+	?>
+		<style type="text/css" media="screen">
+		#menu-posts-bl-section .wp-menu-image {
+			background: url(<?php echo get_template_directory_uri(); ?>/assets/images/cpt-sections.png) no-repeat 6px -18px !important;
+		}
+		#menu-posts-bl-section:hover .wp-menu-image,
+		#menu-posts-bl-section.wp-has-current-submenu .wp-menu-image {
+			background-position: 6px 6px !important;
+		}
+		</style>
+	<?php
 	}
 	
 	/**
@@ -207,7 +225,7 @@ class CPT_Sections {
 <table class="widefat">
 	<thead>
 		<tr>
-			<th width="30"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/move.png" alt="Move" title="Move" /></th>
+			<th width="30"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/move.png" alt="Move" title="Move" /></th>
 			<th>Text</th>
 			<th width="55">Remove</th>
 		</tr>
@@ -252,7 +270,7 @@ class CPT_Sections {
 		?>
 		<tr class="item" data-i="<?php echo $id; ?>">
 			<td class="move">
-				<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/drag-handle.png" alt="Drag to move" title="Drag to move" />
+				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/drag-handle.png" alt="Drag to move" title="Drag to move" />
 			</td>
 			<?php
 			$title = '';
