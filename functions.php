@@ -9,7 +9,8 @@
  * Enqueue scripts and styles
  */
 function bank_local_scripts() {
-	wp_enqueue_style( 'bank-local-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'bank-local-base', get_stylesheet_uri() );
+	wp_enqueue_style( 'bank-local-style', get_stylesheet_directory_uri().'/assets/css/style.css' );
 }
 add_action( 'wp_enqueue_scripts', 'bank_local_scripts' );
 

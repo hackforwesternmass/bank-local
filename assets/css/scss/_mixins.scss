@@ -1,0 +1,42 @@
+@mixin border-radius($radius) {
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin divet( $color ) {
+	position: relative;
+	background-color: $color;
+	&:after {
+		content:"";
+		display: block; /* reduce the damage in FF3.0 */
+		position: absolute;
+		width: 0;
+		bottom: -10px;
+		left: 280px;
+		border-style: solid;
+		border-color: $color transparent;
+		border-width: 10px 10px 0px 10px;
+		@include transform( scaleY(2) );
+	}
+}
+
+@mixin divet-right( $color ) {
+	position: relative;
+	background-color: $color;
+	&:after {
+		content:"";
+		display: block; /* reduce the damage in FF3.0 */
+		position: absolute;
+		width: 0;
+		top: 35px;
+		left: auto;
+		right: -10px;
+		bottom: auto;
+		border-style: solid;
+		border-color: transparent $color;
+		border-width: 10px 0px 10px 10px;
+		@include transform( scaleX(2) );
+	}
+}

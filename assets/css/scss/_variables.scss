@@ -1,0 +1,36 @@
+/* =Color
+-------------------------------------------------------------- */
+
+
+/* =Z-Indexes
+-------------------------------------------------------------- */
+
+$background:			-500;
+$mid-back:				-250;
+$mid-mid:				   0;
+$mid-front:				 250;
+$foreground:			 500;
+
+* {
+	position: relative;
+	z-index: 0;
+}
+
+.bottom {
+	z-index: $background;
+}
+.lower {
+	z-index: $mid-back;
+}
+.middle {
+	z-index: $mid-mid;
+}
+.higher {
+	z-index: $mid-front;
+}
+.top {
+	z-index: $foreground;
+}
+.fixed {
+	position: fixed !important;
+}

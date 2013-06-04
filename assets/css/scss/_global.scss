@@ -1,0 +1,63 @@
+/* =Global
+-------------------------------------------------------------- */
+
+* {
+    @include box-sizing(border-box);
+}
+
+.clearfix {
+	@include clearfix;
+}
+
+.clearleft {
+	clear: left;
+}
+
+.clearright {
+	clear: right;
+}
+
+
+// Links
+
+a {
+
+	
+	&:hover {
+
+	}
+}
+
+// Lists
+
+nav ul {
+	margin: 0;
+	list-style-type: none;
+	
+	li {
+		display: inline;
+	}
+}
+
+
+// Buttons
+
+.button {
+
+}
+
+a.button {
+
+    
+    &:active {
+
+    }
+    
+}
+
+
+// Images
+
+img {
+	max-width: 100%;
+}

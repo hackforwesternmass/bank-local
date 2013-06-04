@@ -1,0 +1,139 @@
+.sky {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 1750px;
+	background-color: #A2D3E5;
+	@include linear-gradient(#A2D3E5, #DCE3E5);
+}
+
+.valley {
+	position: absolute;
+	top: 2200px;
+	left: 0;
+	right: 0;
+	height: 748px;
+	background-color: #92D3A5;
+}
+
+.hand {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 362px;
+	background: url('../images/hand.png') no-repeat center;
+}
+
+.dollar {
+	position: absolute;
+	top: 320px;
+	width: 100%;
+	height: 123px;
+	background: url('../images/dollar.png') no-repeat center;
+}
+
+.bird {
+	position: absolute;
+	top: 100px;
+	right: 0px;
+	height: 76px;
+	width: 137px;
+	background: url('../images/birdie.png') no-repeat center;
+}
+
+.clouds-1, .clouds-2, .rainbow {
+	position: absolute;
+	bottom: 200px;
+	left: -100px;
+	right: -100px;
+	height: 610px;
+}
+.clouds-1 {
+	background: url('../images/cloud1.png') no-repeat bottom left;
+}
+.clouds-2 {
+	background: url('../images/cloud2.png') no-repeat bottom right;
+}
+.rainbow {
+	bottom: 100px;
+	background: url('../images/rainbow2.png') no-repeat bottom center;
+}
+
+.hills {
+	position: absolute;
+	top: 1370px;
+	left: 0;
+	right: 0;
+	height: 320px;
+	background: url('../images/hills.png') no-repeat top center;
+	background-size: cover;
+}
+
+.waves {
+	position: absolute;
+	top: 1670px;
+	left: 0;
+	right: 0;
+	& > div {
+		position: relative;
+		margin-top: -30px;
+		padding-top: 30px;
+		background-repeat: repeat-x;
+		background-position: top center;
+		div { height: 200px; }
+	}
+	.waves-1 {
+		div { background-color: #49c0db; }
+		background-image: url('../images/wave3.png');
+	}
+	.waves-2 {
+		div { background-color: #84defe; }
+		background-image: url('../images/wave2.png');
+	}
+	.waves-3 {
+		div { background-color: #bbedf9; }
+		background-image: url('../images/wave1.png');
+	}
+}
+
+.seamonster {
+	position: absolute;
+	padding: 0 !important;
+	margin: -130px 0 -100px !important;
+	height: 200px;
+	width: 572px;
+	left: 630px;
+	background: url('../images/seasnake.png') no-repeat top center;
+}
+
+.trees {
+	position: absolute;
+	top: 2100px;
+	width: 100%;
+	height: 465px;
+	background: url('../images/trees.png') repeat-x top center;
+}
+
+.houses {
+	position: absolute;
+	top: 2600px;
+	width: 100%;
+	height: 417px;
+	background: url('../images/houses2.png') repeat-x top center;
+}
+
+.pig-bottom, .pig {
+	position: absolute;
+	top: 3260px;
+	width: 100%;
+	margin-left: -10px;
+}
+.pig-bottom {
+	height: 251px;
+	background: url('../images/piggybottom.png') no-repeat top center;
+}
+.pig {
+	height: 417px;
+	background: url('../images/piggytop.png') no-repeat top center;
+}

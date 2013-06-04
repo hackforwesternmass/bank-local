@@ -11,36 +11,65 @@
  * @package Bank Local
  */
 
+if ( WP_DEBUG ){
+	$intro_id = 85;
+	$you_id = 86;
+	$community_id = 87;
+	$join_id = 88;
+} else {
+	$intro_id = 8;
+	$you_id = 9;
+	$community_id = 10;
+	$join_id = 11;
+}
+
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<div id="content" class="site-content" role="main">
+<div class="hand top"></div>
+<div class="dollar fixed higher"></div>
 
-		<?php if ( have_posts() ) : ?>
+<div class="sky bottom">
+	<div class="clouds-1 bottom"></div>
+	<div class="clouds-2 bottom"></div>
+	<div class="rainbow lower"></div>
+	<div class="hills mid"></div>
+</div>
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php
-					/* Include the Post-Format-specific template for the content.
-					 * If you want to overload this in a child theme then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( 'content', get_post_format() );
-				?>
+<div class="valley bottom">
+	<div class="waves mid">
+		<div class="waves-1"><div></div></div>
+		<div class="waves-2"><div></div></div>
+		<div class="seamonster"></div>
+		<div class="waves-3"><div></div></div>
+	</div>
+	<div class="trees mid"></div>
+	<div class="houses mid"></div>
+</div>
 
-			<?php endwhile; ?>
+<div class="pig-bottom bottom"></div>
+<div class="pig top"></div>
 
-			<?php bank_local_content_nav( 'nav-below' ); ?>
+<header class="top">
+	<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
+	<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+	<?php bl_callouts( $intro_id ); ?>
+</header>
+<section id="benefits-for-you" class="top">
+	<div class="bird top"></div>
+	<h3><?php echo get_the_title( $you_id ); ?></h3>
+	<?php bl_callouts( $you_id ); ?>
+</section>
+<section id="benefits-for-community" class="top">
+	<h3><?php echo get_the_title( $community_id ); ?></h3>
+	<?php bl_callouts( $community_id ); ?>
+</section>
+<section id="make-the-switch">
+	<h3><?php echo get_the_title( $join_id ); ?></h3>
+	<?php bl_callouts( $join_id ); ?>
+	<div class="bg">
+	<?php //if ( function_exists( 'bl_display_map' ) ) bl_display_map(); ?>
+	</div>
+</section>
 
-		<?php else : ?>
-
-			<?php get_template_part( 'no-results', 'index' ); ?>
-
-		<?php endif; ?>
-
-		</div><!-- #content -->
-	</div><!-- #primary -->
-
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
