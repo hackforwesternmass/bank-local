@@ -171,10 +171,6 @@ h3 {
 
 /* =Layout
 -------------------------------------------------------------- */
-section {
-  padding: 100px 0;
-}
-
 h2,
 h3 {
   display: block;
@@ -185,11 +181,35 @@ h3 {
   background-color: #383E3F;
 }
 
-h3 {
+#benefits-for-you h3 {
   position: relative;
   background-color: #383e3f;
 }
-h3:after {
+#benefits-for-you h3:after {
+  content: "";
+  display: block;
+  /* reduce the damage in FF3.0 */
+  position: absolute;
+  width: 0;
+  top: 35px;
+  left: auto;
+  right: -20px;
+  bottom: auto;
+  border-style: solid;
+  border-color: transparent #383e3f;
+  border-width: 20px 0px 20px 20px;
+  -webkit-transform: scaleX(2);
+  -moz-transform: scaleX(2);
+  -ms-transform: scaleX(2);
+  -o-transform: scaleX(2);
+  transform: scaleX(2);
+}
+
+#benefits-for-community h3 {
+  position: relative;
+  background-color: #383e3f;
+}
+#benefits-for-community h3:after {
   content: "";
   display: block;
   /* reduce the damage in FF3.0 */
@@ -207,90 +227,21 @@ h3:after {
   transform: scaleY(2);
 }
 
-#benefits-for-you h3 {
+.container {
   position: relative;
-  background-color: #383e3f;
-}
-#benefits-for-you h3:after {
-  content: "";
-  display: block;
-  /* reduce the damage in FF3.0 */
-  position: absolute;
-  width: 0;
-  top: 35px;
-  left: auto;
-  right: -10px;
-  bottom: auto;
-  border-style: solid;
-  border-color: transparent #383e3f;
-  border-width: 10px 0px 10px 10px;
-  -webkit-transform: scaleX(2);
-  -moz-transform: scaleX(2);
-  -ms-transform: scaleX(2);
-  -o-transform: scaleX(2);
-  transform: scaleX(2);
-}
-
-header, section {
   margin: auto;
   max-width: 1000px;
 }
 
-#benefits-for-community {
-  padding-top: 350px;
-}
-#benefits-for-community h3 {
-  margin-bottom: 500px;
-}
-
-#make-the-switch {
-  padding-top: 300px;
-}
-
 .callout {
   position: relative;
+  clear: both;
   padding: 15px;
-  max-width: 340px;
+  max-width: 370px;
   background-color: #E8ECED;
   border: 10px solid #E8ECED;
   z-index: 500;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-}
-header .callout.one {
-  top: 50px;
-  left: 20px;
-}
-header .callout.two {
-  top: 20px;
-  left: 600px;
-}
-header .callout.three {
-  left: 50px;
-}
-#benefits-for-you .callout.one {
-  top: 100px;
-  left: 20px;
-}
-#benefits-for-you .callout.two {
-  top: 120px;
-  left: 600px;
-}
-#benefits-for-you .callout.three {
-  top: 300px;
-  left: 50px;
-}
-#benefits-for-community .callout.one {
-  top: -140px;
-  left: 50px;
-  max-width: 370px;
-}
-#benefits-for-community .callout.two {
-  top: -30px;
-  left: 600px;
-}
-#benefits-for-community .callout.three {
-  top: -50px;
-  left: -15px;
 }
 .callout:after {
   content: " ";
@@ -303,56 +254,107 @@ header .callout.three {
   border: 2px solid #53A4B7;
 }
 
-.sky {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1750px;
-  background-color: #A2D3E5;
+#a-story {
+  padding: 0 0 190px;
+}
+#a-story .callout.one {
+  margin: 140px 0 0 80px;
+}
+#a-story .callout.two {
+  float: right;
+  margin: -50px 90px 0 0;
+}
+#a-story .callout.three {
+  margin: -2px 0 0 144px;
+}
+
+#benefits-for-you {
+  overflow: hidden;
+  padding: 15px 0 130px;
+}
+#benefits-for-you .callout.one {
+  margin: 156px 0 0 90px;
+}
+#benefits-for-you .callout.two {
+  float: right;
+  margin: 6px 64px 0 0;
+  max-width: 410px;
+}
+#benefits-for-you .callout.three {
+  margin: 340px 0 0 150px;
+}
+
+#benefits-for-community {
+  padding: 80px 0 320px;
+}
+#benefits-for-community .callout.one {
+  margin: 370px 0 0 90px;
+}
+#benefits-for-community .callout.two {
+  float: right;
+  margin: 60px 80px 0 0;
+}
+#benefits-for-community .callout.three {
+  margin: 75px 0 0 100px;
+}
+
+#make-the-switch {
+  padding: 50px 0 300px;
+}
+#make-the-switch .callout.one {
+  margin: 110px 0 0;
+}
+
+.sky-top {
+  background-color: #c7e3ed;
   background-color: #a2d3e5;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a2d3e5), color-stop(100%, #dce3e5));
-  background-image: -webkit-linear-gradient(#a2d3e5, #dce3e5);
-  background-image: linear-gradient(#a2d3e5, #dce3e5);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a2d3e5), color-stop(100%, #c7e3ed));
+  background-image: -webkit-linear-gradient(#a2d3e5, #c7e3ed);
+  background-image: linear-gradient(#a2d3e5, #c7e3ed);
+}
+
+.sky-bottom {
+  background-color: #c7e3ed;
+  background-color: #c7e3ed;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #c7e3ed), color-stop(100%, #ecf3f5));
+  background-image: -webkit-linear-gradient(#c7e3ed, #ecf3f5);
+  background-image: linear-gradient(#c7e3ed, #ecf3f5);
 }
 
 .valley {
-  position: absolute;
-  top: 2200px;
-  left: 0;
-  right: 0;
-  height: 748px;
   background-color: #92D3A5;
 }
 
-.hand {
+.image {
   position: absolute;
-  top: 0;
-  width: 100%;
+}
+
+.bg {
+  left: 0;
+  right: 0;
+}
+
+.hand {
   height: 362px;
   background: url("../images/hand.png") no-repeat center;
 }
 
 .dollar {
-  position: absolute;
   top: 320px;
-  width: 100%;
   height: 123px;
   background: url("../images/dollar.png") no-repeat center;
 }
 
 .bird {
-  position: absolute;
-  top: 100px;
-  right: 0px;
+  top: 0px;
+  right: 10px;
   height: 76px;
   width: 137px;
   background: url("../images/birdie.png") no-repeat center;
 }
 
 .clouds-1, .clouds-2, .rainbow {
-  position: absolute;
-  bottom: 200px;
+  bottom: 150px;
   left: -100px;
   right: -100px;
   height: 610px;
@@ -367,23 +369,18 @@ header .callout.three {
 }
 
 .rainbow {
-  bottom: 100px;
+  bottom: 0px;
   background: url("../images/rainbow2.png") no-repeat bottom center;
 }
 
 .hills {
-  position: absolute;
-  top: 1370px;
-  left: 0;
-  right: 0;
+  bottom: 0;
   height: 320px;
-  background: url("../images/hills.png") no-repeat top center;
-  background-size: cover;
+  background: url("../images/hills.png") repeat-x bottom center;
 }
 
 .waves {
-  position: absolute;
-  top: 1670px;
+  top: 0;
   left: 0;
   right: 0;
 }
@@ -415,46 +412,36 @@ header .callout.three {
 .waves .waves-3 div {
   background-color: #bbedf9;
 }
-
-.seamonster {
-  position: absolute;
+.waves .seamonster {
   padding: 0 !important;
   margin: -130px 0 -100px !important;
   height: 200px;
-  width: 572px;
-  left: 630px;
-  background: url("../images/seasnake.png") no-repeat top center;
+  background: url("../images/seasnake.png") no-repeat top right;
 }
 
 .trees {
-  position: absolute;
-  top: 2100px;
-  width: 100%;
+  top: 430px;
   height: 465px;
   background: url("../images/trees.png") repeat-x top center;
 }
 
 .houses {
-  position: absolute;
-  top: 2600px;
-  width: 100%;
+  bottom: 0;
   height: 417px;
   background: url("../images/houses2.png") repeat-x top center;
 }
 
 .pig-bottom, .pig {
-  position: absolute;
-  top: 3260px;
+  bottom: 0;
+  height: 251px;
   width: 100%;
   margin-left: -10px;
 }
 
 .pig-bottom {
-  height: 251px;
   background: url("../images/piggybottom.png") no-repeat top center;
 }
 
 .pig {
-  height: 417px;
   background: url("../images/piggytop.png") no-repeat top center;
 }
