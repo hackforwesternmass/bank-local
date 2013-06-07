@@ -230,7 +230,7 @@ h3 {
 .container {
   position: relative;
   margin: auto;
-  max-width: 1000px;
+  width: 1000px;
 }
 
 .pull-up {
@@ -331,6 +331,7 @@ h3 {
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #a2d3e5), color-stop(100%, #c7e3ed));
   background-image: -webkit-linear-gradient(#a2d3e5, #c7e3ed);
   background-image: linear-gradient(#a2d3e5, #c7e3ed);
+  min-width: 1000px;
 }
 
 .sky-bottom {
@@ -339,10 +340,12 @@ h3 {
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #c7e3ed), color-stop(100%, #ecf3f5));
   background-image: -webkit-linear-gradient(#c7e3ed, #ecf3f5);
   background-image: linear-gradient(#c7e3ed, #ecf3f5);
+  min-width: 1000px;
 }
 
 .valley {
   background-color: #92D3A5;
+  min-width: 1000px;
 }
 
 .sand {
@@ -351,6 +354,7 @@ h3 {
   background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #b7e8c5), color-stop(100%, white));
   background-image: -webkit-linear-gradient(#b7e8c5, white);
   background-image: linear-gradient(#b7e8c5, white);
+  min-width: 1000px;
 }
 
 .image {
@@ -468,6 +472,7 @@ h3 {
   bottom: 870px;
   height: 251px;
   width: 100%;
+  min-width: 1000px;
   margin-left: -10px;
 }
 

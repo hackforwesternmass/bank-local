@@ -1,17 +1,21 @@
 .sky-top {
 	background-color: mix( #A2D3E5, #ECF3F5 );
 	@include linear-gradient( #A2D3E5, mix( #A2D3E5, #ECF3F5 ) );
+	min-width: 1000px;
 }
 .sky-bottom {
 	background-color: mix( #A2D3E5, #ECF3F5 );
 	@include linear-gradient( mix( #A2D3E5, #ECF3F5 ), #ECF3F5 );
+	min-width: 1000px;
 }
 .valley {
 	background-color: #92D3A5;
+	min-width: 1000px;
 }
 .sand {
 	background-color: mix( #b7e8c5, #fff );
 	@include linear-gradient( #b7e8c5, #fff );
+	min-width: 1000px;
 }
 
 .image {
@@ -118,6 +122,7 @@
 	bottom: 870px;
 	height: 251px;
 	width: 100%;
+	min-width: 1000px;
 	margin-left: -10px;
 }
 .pig-bottom {
