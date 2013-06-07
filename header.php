@@ -16,6 +16,14 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
 <?php wp_head(); ?>
+<script>
+jQuery( document ).ready( function( $ ) {
+	$( document.querySelectorAll( ".container" ) ).each(function ( i, el ) {
+		var item = document.getElementById( $(el).data('bg') );
+		$( item ).css({ height: $(el).css('height') });
+	});
+} );
+</script>
 </head>
 
 <body <?php body_class(); ?>>

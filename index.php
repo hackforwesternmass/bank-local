@@ -25,27 +25,13 @@ if ( WP_DEBUG ){
 
 get_header(); ?>
 
-<div class="bg image hand top"></div>
-
-<header id="a-story" class="sky-top">
-	<div class="container">
-		<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
-		<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-		<?php bl_callouts( $intro_id ); ?>
-	</div>
-</header>
+<header id="a-story" class="sky-top"></header>
 
 <section id="benefits-for-you" class="sky-bottom">
 	<div class="bg image clouds-1 bottom"></div>
 	<div class="bg image clouds-2 bottom"></div>
 	<div class="bg image rainbow lower"></div>
 	<div class="bg image hills mid"></div>
-
-	<div class="container">
-		<div class="image bird top"></div>
-		<h3><?php echo get_the_title( $you_id ); ?></h3>
-		<?php bl_callouts( $you_id ); ?>
-	</div>
 </section>
 
 <section id="benefits-for-community" class="valley">
@@ -57,27 +43,39 @@ get_header(); ?>
 	</div>
 	<div class="bg image trees mid"></div>
 	<div class="bg image houses mid"></div>
+</section>
 
-	<div class="container">
+<section id="make-the-switch" class="sand"></section>
+
+<div class="bg image hand top"></div>
+<div id="dollar" class="bg image dollar fixed higher"></div>
+
+<div class="image pig-bottom mid"></div>
+<div class="image pig top"></div>
+
+<div class="pull-up top">
+	<div class="container top a-story" data-bg="a-story">
+		<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
+		<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+		<?php bl_callouts( $intro_id ); ?>
+	</div>
+	<div class="container top benefits-for-you" data-bg="benefits-for-you">
+		<div class="image bird top"></div>
+		<h3><?php echo get_the_title( $you_id ); ?></h3>
+		<?php bl_callouts( $you_id ); ?>
+	</div>
+	<div class="container top benefits-for-community" data-bg="benefits-for-community">
 		<h3><?php echo get_the_title( $community_id ); ?></h3>
 		<?php bl_callouts( $community_id ); ?>
 	</div>
-</section>
-
-<section id="make-the-switch">
-	<div class="image pig-bottom bottom"></div>
-	<div class="image pig top"></div>
-
-	<div class="container">
+	<div class="container top make-the-switch" data-bg="make-the-switch">
 		<h3><?php echo get_the_title( $join_id ); ?></h3>
 		<?php bl_callouts( $join_id ); ?>
+		<div class="pig-space"></div>
+		<div class="map">
+		<?php //if ( function_exists( 'bl_display_map' ) ) bl_display_map(); ?>
+		</div>
 	</div>
-
-	<!--<div class="bg">
-	<?php //if ( function_exists( 'bl_display_map' ) ) bl_display_map(); ?>
-	</div>-->
-</section>
-
-<div class="bg image dollar fixed higher"></div>
+</div>
 
 <?php get_footer(); ?>

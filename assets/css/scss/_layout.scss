@@ -21,6 +21,12 @@ h3 {
 	margin: auto;
 	max-width: 1000px;
 }
+.pull-up {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+}
 
 .callout {
 	position: relative;
@@ -44,8 +50,11 @@ h3 {
 	}
 }
 
-#a-story {
+#a-story,
+.a-story {
 	padding: 0 0 190px;
+}
+.a-story {
 	.callout {
 		&.one {
 			margin: 140px 0 0 80px;
@@ -60,9 +69,12 @@ h3 {
 	}
 }
 
-#benefits-for-you {
+#benefits-for-you,
+.benefits-for-you {
 	overflow: hidden;
 	padding: 15px 0 130px;
+}
+.benefits-for-you {
 	.callout {
 		&.one {
 			margin: 156px 0 0 90px;
@@ -78,8 +90,11 @@ h3 {
 	}
 }
 
-#benefits-for-community {
+#benefits-for-community,
+.benefits-for-community {
 	padding: 80px 0 320px;
+}
+.benefits-for-community {
 	.callout {
 		&.one {
 			margin: 370px 0 0 90px;
@@ -89,16 +104,25 @@ h3 {
 			margin: 60px 80px 0 0;
 		}
 		&.three {
-			margin: 75px 0 0 100px;
+			margin: 260px 0 0 100px;
 		}
 	}
 }
 
-#make-the-switch {
+#make-the-switch,
+.make-the-switch {
 	padding: 50px 0 300px;
+}
+.make-the-switch {
 	.callout {
 		&.one {
 			margin: 110px 0 0;
 		}
+	}
+	.map {
+		margin: 50px auto;
+		width: 500px;
+		height: 500px;
+		//background: lightblue;
 	}
 }

@@ -11,6 +11,7 @@
 function bank_local_scripts() {
 	wp_enqueue_style( 'bank-local-base', get_stylesheet_uri() );
 	wp_enqueue_style( 'bank-local-style', get_stylesheet_directory_uri().'/assets/css/style.css' );
+	wp_enqueue_script( 'bank-local-script', get_stylesheet_directory_uri().'/assets/js/app.js', array( 'jquery' ) );
 }
 add_action( 'wp_enqueue_scripts', 'bank_local_scripts' );
 

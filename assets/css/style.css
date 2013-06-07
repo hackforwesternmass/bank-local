@@ -233,6 +233,13 @@ h3 {
   max-width: 1000px;
 }
 
+.pull-up {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
 .callout {
   position: relative;
   clear: both;
@@ -254,55 +261,68 @@ h3 {
   border: 2px solid #53A4B7;
 }
 
-#a-story {
+#a-story,
+.a-story {
   padding: 0 0 190px;
 }
-#a-story .callout.one {
+
+.a-story .callout.one {
   margin: 140px 0 0 80px;
 }
-#a-story .callout.two {
+.a-story .callout.two {
   float: right;
   margin: -50px 90px 0 0;
 }
-#a-story .callout.three {
+.a-story .callout.three {
   margin: -2px 0 0 144px;
 }
 
-#benefits-for-you {
+#benefits-for-you,
+.benefits-for-you {
   overflow: hidden;
   padding: 15px 0 130px;
 }
-#benefits-for-you .callout.one {
+
+.benefits-for-you .callout.one {
   margin: 156px 0 0 90px;
 }
-#benefits-for-you .callout.two {
+.benefits-for-you .callout.two {
   float: right;
   margin: 6px 64px 0 0;
   max-width: 410px;
 }
-#benefits-for-you .callout.three {
+.benefits-for-you .callout.three {
   margin: 340px 0 0 150px;
 }
 
-#benefits-for-community {
+#benefits-for-community,
+.benefits-for-community {
   padding: 80px 0 320px;
 }
-#benefits-for-community .callout.one {
+
+.benefits-for-community .callout.one {
   margin: 370px 0 0 90px;
 }
-#benefits-for-community .callout.two {
+.benefits-for-community .callout.two {
   float: right;
   margin: 60px 80px 0 0;
 }
-#benefits-for-community .callout.three {
-  margin: 75px 0 0 100px;
+.benefits-for-community .callout.three {
+  margin: 260px 0 0 100px;
 }
 
-#make-the-switch {
+#make-the-switch,
+.make-the-switch {
   padding: 50px 0 300px;
 }
-#make-the-switch .callout.one {
+
+.make-the-switch .callout.one {
   margin: 110px 0 0;
+}
+.make-the-switch .map {
+  margin: 50px auto;
+  width: 500px;
+  height: 500px;
 }
 
 .sky-top {
@@ -325,6 +345,14 @@ h3 {
   background-color: #92D3A5;
 }
 
+.sand {
+  background-color: #dbf3e2;
+  background-color: #b7e8c5;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #b7e8c5), color-stop(100%, white));
+  background-image: -webkit-linear-gradient(#b7e8c5, white);
+  background-image: linear-gradient(#b7e8c5, white);
+}
+
 .image {
   position: absolute;
 }
@@ -335,6 +363,7 @@ h3 {
 }
 
 .hand {
+  top: 0;
   height: 362px;
   background: url("../images/hand.png") no-repeat center;
 }
@@ -420,7 +449,7 @@ h3 {
 }
 
 .trees {
-  top: 430px;
+  top: 330px;
   height: 465px;
   background: url("../images/trees.png") repeat-x top center;
 }
@@ -431,8 +460,12 @@ h3 {
   background: url("../images/houses2.png") repeat-x top center;
 }
 
+.pig-space {
+  height: 200px;
+}
+
 .pig-bottom, .pig {
-  bottom: 0;
+  bottom: 870px;
   height: 251px;
   width: 100%;
   margin-left: -10px;

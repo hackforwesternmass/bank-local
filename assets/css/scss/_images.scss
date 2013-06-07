@@ -9,6 +9,10 @@
 .valley {
 	background-color: #92D3A5;
 }
+.sand {
+	background-color: mix( #b7e8c5, #fff );
+	@include linear-gradient( #b7e8c5, #fff );
+}
 
 .image {
 	position: absolute;
@@ -19,6 +23,7 @@
 }
 
 .hand {
+	top: 0;
 	height: 362px;
 	background: url('../images/hand.png') no-repeat center;
 }
@@ -95,7 +100,7 @@
 }
 
 .trees {
-	top: 430px;
+	top: 330px;
 	height: 465px;
 	background: url('../images/trees.png') repeat-x top center;
 }
@@ -106,8 +111,11 @@
 	background: url('../images/houses2.png') repeat-x top center;
 }
 
+.pig-space {
+	height: 200px;
+}
 .pig-bottom, .pig {
-	bottom: 0;
+	bottom: 870px;
 	height: 251px;
 	width: 100%;
 	margin-left: -10px;
