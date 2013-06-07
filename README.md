@@ -1,7 +1,7 @@
 Why Bank Local?
 ===============
 
-This is the theme for [whybanklocal.pvlocalfirst.org](whybanklocal.pvlocalfirst.org), 
+This is the theme for [whybanklocal.pvlocalfirst.org](http://whybanklocal.pvlocalfirst.org), 
 a WordPress site to promote local banking specifically in the pioneer valley.
 
 The map plugin is will be in another repo, linked here once up.
@@ -15,7 +15,7 @@ locally. The master branch is the theme itself, so you'll put that in
 `wp-content/themes/`. It should work with or without the plugin- without 
 the plugin you will have a large empty space at the bottom of the site.
 
-You can then export content from the [live site](whybanklocal.pvlocalfirst.org)
+You can then export content from the [live site](http://whybanklocal.pvlocalfirst.org)
 to populate your dev site, however the section IDs are currently hardcoded.
 
 TODO (theme only)
