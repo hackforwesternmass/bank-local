@@ -36,7 +36,7 @@ h3 {
 	background-color: #E8ECED;
 	border: 10px solid #E8ECED;
 	z-index: $foreground;
-	@include box-shadow(0 0 5px rgba(0,0,0,.15));
+	box-shadow: 0 0 5px rgba(0,0,0,.15);
 	
 	&:after {
 	   content: " ";
