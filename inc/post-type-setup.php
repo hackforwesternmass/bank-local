@@ -3,8 +3,6 @@
  * Create the Custom Post Type "Sections" with meta for points & design
  * Remove Posts from the menu (because we aren't using them)
  * Note: We're leaving pages for informational purposes.
- * @todo: Remove the "View post" link from success message
- * @todo: Add icon to sections
  */
 
 class CPT_Sections {
@@ -56,6 +54,23 @@ class CPT_Sections {
 		add_action( 'edit_form_after_title', array( $this, 'edit_form_after_title' ) );
 
 		add_action( 'save_post', array( $this, 'save_points' ), 10, 2 );
+	}
+	
+	/**
+	 * Remove Posts from the admin menu (still accesible by direct link).
+	 */
+	function remove_menus() {
+		global $menu;
+		$restricted = array( __( 'Posts' ) );
+		end( $menu );
+	
+		while ( prev( $menu ) ) {
+			$value = explode( ' ', $menu[ key( $menu ) ][0] );
+	
+			if ( ( $value[0] != NULL ) && in_array(  $value[0], $restricted ) ) {
+				unset( $menu[ key( $menu ) ] );
+			}
+		}
 	}
 	
 	/**
@@ -111,20 +126,6 @@ class CPT_Sections {
 			'rewrite'		=> false,
 			'show_in_nav_menus'	=> false,
 		));
-	}
-	
-	function remove_menus() {
-		global $menu;
-		$restricted = array( __( 'Posts' ) );
-		end( $menu );
-	
-		while ( prev( $menu ) ) {
-			$value = explode( ' ', $menu[ key( $menu ) ][0] );
-	
-			if ( ( $value[0] != NULL ) && in_array(  $value[0], $restricted ) ) {
-				unset( $menu[ key( $menu ) ] );
-			}
-		}
 	}
 	
 	/**
